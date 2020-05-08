@@ -1,0 +1,4 @@
+project,shortmessage,commit hash,date,author,path,patch
+apache,Fix,3be7e6ab9198dff45f3c2085b65a745852dbdf45,2020-04-03,human,httpclient/src/examples/org/apache/http/examples/client/ClientConnectionRelease.java
+apache,Fix,7302f4b7a39718aeeb00d9d479a4878a2748de25,2020-04-03,human,httpclient/src/main/java/org/apache/http/impl/client/StandardHttpRequestRetryHandler.java
+apache,Fix,6963674cd6a5ee8fcbb360d15c11c4efcba180c1,2020-04-03,human,module-client/src/main/java/org/apache/http/impl/conn/ProxySelectorRoutePlanner.java
