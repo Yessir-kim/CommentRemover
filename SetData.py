@@ -13,28 +13,29 @@ def InitData():
             # Ignore exception
             print("Alerady exist") 
 
-    path_dir = "C:/Lab/EJTool/Ngram/data/MappingCommitFiles"
+    filename = input("Input a filename that include url information : ")
+
+    org_path = os.getcwd()
+
+    path_dir = org_path + "/MappingCommitFiles"
     
     file_list = os.listdir(path_dir) # Save file list in MappingCommitFiles
 
-    filename = input("Input a filename that include url information : ")
-
-    cnt = 0
     file_dict = dict()
+    path = ""
     file_hash = []
-
-    csv_f = open('sample.csv','r') # Open csv file
-
-    rdr = csv.reader(csv_f) # Get text 
-
-    for line in rdr:
-        # It is a variable that used to ignore the first line of csv file
-        if cnt > 0: 
-            # Separate file extension    
-            re_line = line[2].split(".") 
-            file_hash.append(re_line[0])
-            # Hash value and path mapping
-            file_dict[line[2]] = line[5] 
-        cnt += 1
-
-    return filename, file_hash, file_dict, file_list
+    
+    os.chdir(path_dir)
+    
+    for name in file_list:
+        with open(name, 'r') as hFile:
+            all_lines = hFile.readlines()
+            print(all_lines)
+            hName = name.split(".") # hash value
+            path = all_lines[0]
+            file_hash.append(hName[0])
+            file_dict[hName[0]] = path
+    
+    os.chdir(org_path)
+    
+    return filename, file_dict, file_hash

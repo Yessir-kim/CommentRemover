@@ -1,0 +1,2 @@
+exec/java-exec/src/main/java/org/apache/drill/exec/physical/impl/xsort/managed/SpilledRuns.java
+newGroup.closeWriter();
